@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Linux下把硬盘当作内存 | 月影剑博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="在这个内存涨价贵如油，硬盘却不值钱的时候，想办法把硬盘用作内存，是个相当划算的做法(手动坏笑)。废话不多说，让我们搞起来！  第一步先在硬盘上创建一块“虚拟内存”空间(🌰 中是1G的虚拟内存)  1dd if=/dev/zero of=~/vram bs=4096 count=262144 以上的路径可以自己定义，count后面的数字算法：1024 * 1024^2 / 4096 = 26214">
+<meta name="keywords" content="技术">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux下把硬盘当作内存">
+<meta property="og:url" content="http://mooncool.github.io/2017/10/09/use-hard-disk-as-ram/index.html">
+<meta property="og:site_name" content="月影剑博客">
+<meta property="og:description" content="在这个内存涨价贵如油，硬盘却不值钱的时候，想办法把硬盘用作内存，是个相当划算的做法(手动坏笑)。废话不多说，让我们搞起来！  第一步先在硬盘上创建一块“虚拟内存”空间(🌰 中是1G的虚拟内存)  1dd if=/dev/zero of=~/vram bs=4096 count=262144 以上的路径可以自己定义，count后面的数字算法：1024 * 1024^2 / 4096 = 26214">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-03T12:25:40.878Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux下把硬盘当作内存">
+<meta name="twitter:description" content="在这个内存涨价贵如油，硬盘却不值钱的时候，想办法把硬盘用作内存，是个相当划算的做法(手动坏笑)。废话不多说，让我们搞起来！  第一步先在硬盘上创建一块“虚拟内存”空间(🌰 中是1G的虚拟内存)  1dd if=/dev/zero of=~/vram bs=4096 count=262144 以上的路径可以自己定义，count后面的数字算法：1024 * 1024^2 / 4096 = 26214">
+  
+    <link rel="alternate" href="/atom.xml" title="月影剑博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">月影剑博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">知道的越多，不知道的也越多。生命不息，学习不止！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://mooncool.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-use-hard-disk-as-ram" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/10/09/use-hard-disk-as-ram/" class="article-date">
+  <time datetime="2017-10-09T05:35:17.000Z" itemprop="datePublished">2017-10-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Linux下把硬盘当作内存
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在这个内存涨价贵如油，硬盘却不值钱的时候，想办法把硬盘用作内存，是个相当划算的做法(手动坏笑)。<br>废话不多说，让我们搞起来！</p>
+<ol>
+<li>第一步先在硬盘上创建一块“虚拟内存”空间(🌰 中是1G的虚拟内存)</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dd if=/dev/zero of=~/vram bs=4096 count=262144</div></pre></td></tr></table></figure>
+<p>以上的路径可以自己定义，count后面的数字算法：<code>1024 * 1024^2 / 4096 = 262144</code><br>如果是512MB，则：<code>512 * 1024^2 / 4096 = 131072</code><br>以此类推。</p>
+<p>还有更简单的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">fallocate -l 4G ~/vram</div></pre></td></tr></table></figure>
+<p>要多少，直接后面加，可以M、G各种单位。</p>
+<ol>
+<li>第二步当然是把这块内存初始化一下了</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mkswap ~/vram -f</div></pre></td></tr></table></figure>
+<p>路径请自行改成上面自己定义的路径。</p>
+<ol>
+<li>第三步，挂接上去，大功告成！</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo swapon -p 1000 ~/vram</div></pre></td></tr></table></figure>
+<p>注意这一步是用root权限哦！不然会报错<code>swapon failed: Operation not permitted</code>。<br>大功告成，让我们检查一下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">free -m</div></pre></td></tr></table></figure>
+<p>如果看到 swap 变大了，那么就恭喜你，成功了！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mooncool.github.io/2017/10/09/use-hard-disk-as-ram/" data-id="cjcg9ph3a00102eyrvl3iq055" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技术/">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/11/02/operation-guide/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          运维规范
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/09/08/shadowsocks/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Shadowsocks安装及配置</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/代码规范/" style="font-size: 15px;">代码规范</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">九月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">八月 2012</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/02/operation-guide/">运维规范</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/09/use-hard-disk-as-ram/">Linux下把硬盘当作内存</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/08/shadowsocks/">Shadowsocks安装及配置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/09/term-dictionary-2017/">门窗2017 术语-变量名对照表</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/27/rest-api-design-guide/">RESTFUL API 设计规范</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Moon<br>
+      Powered by <a href="https://mooncool.github.io/" target="_blank">月影剑博客</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

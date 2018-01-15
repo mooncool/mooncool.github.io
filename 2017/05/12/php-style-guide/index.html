@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>PHP代码规范 | 月影剑博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言 源码文件必须采用UTF-8编码，且不得有BOM头，某些历史遗留的GBK模块除外。 编码风格没有太多的好坏之分, 最重要的是风格保持一致，编码规范有助于规范我们编码的风格，使代码具有更好的可读性。 PHP在新格尔内部应用得越来越广泛，但是却缺乏相应的编码规范支持，编码风格百家齐放，不利于我们代码的维护和传承， 根据大家平时的开发情况，制定了此PHP编码规范。 每项规范前面的 [强制] 代表该规">
+<meta name="keywords" content="代码规范">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP代码规范">
+<meta property="og:url" content="http://mooncool.github.io/2017/05/12/php-style-guide/index.html">
+<meta property="og:site_name" content="月影剑博客">
+<meta property="og:description" content="前言 源码文件必须采用UTF-8编码，且不得有BOM头，某些历史遗留的GBK模块除外。 编码风格没有太多的好坏之分, 最重要的是风格保持一致，编码规范有助于规范我们编码的风格，使代码具有更好的可读性。 PHP在新格尔内部应用得越来越广泛，但是却缺乏相应的编码规范支持，编码风格百家齐放，不利于我们代码的维护和传承， 根据大家平时的开发情况，制定了此PHP编码规范。 每项规范前面的 [强制] 代表该规">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-03T12:25:40.872Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP代码规范">
+<meta name="twitter:description" content="前言 源码文件必须采用UTF-8编码，且不得有BOM头，某些历史遗留的GBK模块除外。 编码风格没有太多的好坏之分, 最重要的是风格保持一致，编码规范有助于规范我们编码的风格，使代码具有更好的可读性。 PHP在新格尔内部应用得越来越广泛，但是却缺乏相应的编码规范支持，编码风格百家齐放，不利于我们代码的维护和传承， 根据大家平时的开发情况，制定了此PHP编码规范。 每项规范前面的 [强制] 代表该规">
+  
+    <link rel="alternate" href="/atom.xml" title="月影剑博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">月影剑博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">知道的越多，不知道的也越多。生命不息，学习不止！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://mooncool.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-php-style-guide" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/12/php-style-guide/" class="article-date">
+  <time datetime="2017-05-12T02:48:53.000Z" itemprop="datePublished">2017-05-12</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      PHP代码规范
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><ul>
+<li>源码文件必须采用UTF-8编码，且不得有BOM头，某些历史遗留的GBK模块除外。</li>
+<li>编码风格没有太多的好坏之分, 最重要的是风格保持一致，编码规范有助于规范我们编码的风格，使代码具有更好的可读性。</li>
+<li>PHP在新格尔内部应用得越来越广泛，但是却缺乏相应的编码规范支持，编码风格百家齐放，不利于我们代码的维护和传承， 根据大家平时的开发情况，制定了此PHP编码规范。</li>
+<li>每项规范前面的 <strong>[强制]</strong> 代表该规范需要强制执行, <strong>[建议]</strong> 代表推荐执行但不强制。</li>
+<li>注: 文中所有的变量名前面为了方便没有加”$”, 示意即可。</li>
+<li>本文档风格约定部分可能跟你的喜好有冲突，请尽量用包容的心态来阅读。有任何问题或建议，欢迎跟我们讨论: zhujian@cshen.cn</li>
+</ul>
+<h1 id="排版"><a href="#排版" class="headerlink" title="排版"></a>排版</h1><p><strong>[强制]</strong> [PHP002] 程序块要采用缩进风格编写，缩进的空格数建议为4个，单模块内必须统一。</p>
+<p><strong>解释</strong><br>不同的缩进风格对代码的可读性影响很大，以tab为缩进单位在不同的tab step 下可读性也相差很多，所以将缩进定为一个soft tab即4个空格，这样在所有环境下缩进都会保持一致。</p>
+<hr>
+<p><strong>[建议]</strong> 关键字与其后的左括号之间有一个空格，而函数名与左括号之间不应有任何字符包括空格。</p>
+<p><strong>解释</strong><br>虽然很多情况下编辑器的highlight已经做了区分，但是从格式上区分关键字和函数适用于所有的情况。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">关键字    <span class="keyword">if</span> (a &gt; b)</div><div class="line">函数名    funcA()</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[建议]</strong> 开始的大括号位于一行的末尾，结束的括号位于最末一行后，且独占一行。首括号也可另起一行，但一个模块内必须统一。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (a &gt; b) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[强制]</strong> [PHP003] if/while等结构体，即使只有一行，也必须加上花括号，不得写成一行。</p>
+<p><strong>解释</strong><br>这样做可读性更好，并且方便修改。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (a &gt; b) &#123;</div><div class="line">    a = <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[建议]</strong> 一行代码不得超过120个字节，建议控制在80字节内；一个函数不得超过500行，建议控制在100行以内。</p>
+<p><strong>解释</strong><br>代码更美观， 可读性更好</p>
+<hr>
+<p><strong>[建议]</strong> else-if语句使用else if形式，不使用elseif形式。</p>
+<hr>
+<p><strong>[建议]</strong> 函数名与其后的左括号之间不应有任何字符(包括空格) 函数调用的左括号与其第一个参数之间不应有任何字符(包括空格) 最后一个参数与右括号之间不应有任何字符(包括空格) 参数列表的逗号后面应有一个空格</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">funcA(a, b, c) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[建议]</strong> 避免由于对错误的条件做判断带来if的嵌套。</p>
+<p><strong>解释</strong><br>减少if/else嵌套， 更利于代码逻辑的理解。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">不推荐的方式:</div><div class="line"><span class="keyword">if</span> (a === <span class="keyword">false</span>) &#123;</div><div class="line">    <span class="comment">// error handle</span></div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">    <span class="keyword">if</span> (b === <span class="keyword">false</span>) &#123;</div><div class="line">        <span class="comment">// handle</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">推荐的方式:</div><div class="line"><span class="keyword">if</span> (a === <span class="keyword">false</span>) &#123;</div><div class="line">    <span class="comment">// error handle</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (b === <span class="keyword">false</span>) &#123;</div><div class="line">    <span class="comment">// handle</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[建议]</strong> 如果过长的话需要另起一行。if 语句的条件若较多较长，应折行；新行以逻辑运算符起始，与第一行 if 左括号后的第一个字符对齐；折行后，每行条件具有独立而明确的语义</p>
+<p><strong>解释</strong><br>这样做逻辑更一目了然。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (a &gt; b &amp;&amp; c &gt; d</div><div class="line">    &amp;&amp; e &gt; f &amp;&amp; h &gt; j</div><div class="line">    &amp;&amp; z &gt; x) &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[建议]</strong> 多行的”=”可能的话尽量用空格对齐。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">a   = <span class="number">1</span>;</div><div class="line">ab  = <span class="number">2</span>;</div><div class="line">abc = <span class="number">3</span>;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[强制]</strong> [PHP009] Switch语句中每个case的break必须和case间有缩进。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">case</span> <span class="string">'A'</span>:</div><div class="line">    a  = <span class="number">2</span>;</div><div class="line">    <span class="keyword">break</span>;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[强制]</strong> [PHP008] 初始化array如果采用多行结构时，数据项部分需要缩进，且最后一个数据项后面的逗号不可省略。</p>
+<p><strong>解释</strong><br>这样做在修改代码增加数据项的时候不容易出现语法错误。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$a = <span class="keyword">array</span>(</div><div class="line">    <span class="string">'a'</span> =&gt; <span class="string">'b'</span>,</div><div class="line">    <span class="string">'b'</span> =&gt; <span class="string">'c'</span>,</div><div class="line">    <span class="string">'c'</span> =&gt; <span class="string">'d'</span>,</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[建议]</strong> 复杂的表达式, 使用括号表明优先级, 而不完全依赖运算符优先级。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 不推荐方式:</span></div><div class="line"><span class="keyword">if</span> ($a &amp;&amp; $b || $c + $b &amp;&amp; $e) &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 推荐方式：</span></div><div class="line"><span class="keyword">if</span> (($a &amp;&amp; $b) || (($c + $b) &amp;&amp; $e)) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[建议]</strong> 同一个代码块的变量定义, 应该尽可能集中在块开始位置，提高可读性。</p>
+<hr>
+<p><strong>[建议]</strong> 除模板外，不允许使用 ?&gt; 标记结尾, 避免其后误加的字符干扰页面渲染。</p>
+<hr>
+<p><strong>[建议]</strong> 产品线内必须统一换行符的使用, 推荐”\n”。</p>
+<hr>
+<h1 id="命名"><a href="#命名" class="headerlink" title="命名"></a>命名</h1><p><strong>[强制]</strong> [PHP025] 全局变量以g_开头。</p>
+<p><strong>解释</strong><br>全局变量对代码影响很大，以g_开头便能在代码中一眼看出是全局变量。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">g_count;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[强制]</strong> [PHP004] 常量命名使用全部大写字符，单词之间以”_”连接。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PAGE_NUM</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[建议]</strong> 对于代码中的常量，建议用常量或define表示，不应直接写在代码中。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">define(<span class="string">'PAGE_NUM'</span>, <span class="number">3</span>);</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[强制]</strong> [PHP010] 关键字true、false、null必须小写</p>
+<hr>
+<p><strong>[强制]</strong> [PHP026] 类method命名采用驼峰命名, 普通function采用过程函数风格命名。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">类method：</div><div class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">getName</span><span class="params">()</span> </span>&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">普通<span class="function"><span class="keyword">function</span>：</span></div><div class="line"><span class="function"><span class="title">function</span> <span class="title">show_me_the_money</span><span class="params">()</span> </span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[强制]</strong> 类成员变量和局部变量必须采用驼峰命名法，建议增加三字节的类型前缀：arr、str、int、bol、obj等</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$strName, $intAge</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[建议]</strong> 文件(除了类)命名使用小写字母，单词之间以”_”连接。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">show_lemma.php</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[建议]</strong> 配置文件的名称为配置文件名 + .conf.php, 不涉及类的都小写通过”_”连接。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">good_version.conf.php</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[建议]</strong> 类名应以大写字母开头，每个单词的首字母大写。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ActionController</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[建议]</strong> final放在访问控制符的前面、访问控制符放在static的前面</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">final</span> <span class="keyword">public</span> <span class="keyword">static</span> <span class="function"><span class="keyword">function</span> <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<h1 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h1><p><strong>[建议]</strong> 文件、函数、类以及成员变量都应包含注释，关键代码必须有注释。<br>类文件/普通文件的注释, 说明该文件的主要作用。</p>
+<p><strong>示例</strong><br>“A simple class describing employees” 说明类文件的主要作用。<br>“@package Employee” 说明namespace(如果有)<br>“@author George Schlossnagle” 说明作者信息</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * A simple class describing employees</span></div><div class="line"><span class="comment"> *</span></div><div class="line"><span class="comment"> * <span class="doctag">@package</span> Employee</span></div><div class="line"><span class="comment"> * <span class="doctag">@author</span> George Schlossnagle</span></div><div class="line"><span class="comment"> */</span></div></pre></td></tr></table></figure>
+<p>类的注释, 说明该类的主要作用。</p>
+<p><strong>示例</strong><br>“An example of documenting a class” 说明类的主要作用。<br>“The employees annual salary” 说明变量的作用。<br>“@var number” 说明变量的类型。<br>“The class constructor” 说明方法的作用。<br>“@param” 说明参数类型。<br>“@access” 说明访问权限。<br>“@return” 说明返回值。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"><span class="comment"> * An example of documenting a class</span></div><div class="line"><span class="comment"> */</span></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span></span></div><div class="line"><span class="class"></span>&#123;</div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * <span class="doctag">@var</span> string</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">private</span> $name;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * The employees annual salary</span></div><div class="line"><span class="comment">     * <span class="doctag">@var</span> number</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">private</span> $salary;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * <span class="doctag">@var</span> number</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">private</span> $employee_id;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * The class constructor</span></div><div class="line"><span class="comment">     * <span class="doctag">@param</span> number</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">Employee</span><span class="params">($employee_id = false)</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> ($employee_id) &#123;</div><div class="line">            <span class="keyword">$this</span>-&gt;employee_id = $employee_id;</div><div class="line">            <span class="keyword">$this</span>-&gt;_fetchInfo();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * Fetches info for employee</span></div><div class="line"><span class="comment">     *</span></div><div class="line"><span class="comment">     * <span class="doctag">@access</span> private</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">private</span> <span class="function"><span class="keyword">function</span> <span class="title">fetchInfo</span><span class="params">()</span> </span>&#123;</div><div class="line">          $query = <span class="string">"SELECT name,</span></div><div class="line"><span class="string">                       salary</span></div><div class="line"><span class="string">                    FROM employees</span></div><div class="line"><span class="string">                    WHERE employee_id = $this-&gt;employee_id"</span>;</div><div class="line">          $result = mysql_query($query);</div><div class="line">          <span class="keyword">list</span>(<span class="keyword">$this</span>-&gt;name, <span class="keyword">$this</span>-&gt;department_id) = mysql_fetch_row($result);</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="comment">/**</span></div><div class="line"><span class="comment">     * Returns the monthly salary for the employee</span></div><div class="line"><span class="comment">     * <span class="doctag">@return</span> number Monthly salary in dollars</span></div><div class="line"><span class="comment">     */</span></div><div class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">monthlySalary</span><span class="params">()</span> </span>&#123;</div><div class="line">          <span class="keyword">return</span> <span class="keyword">$this</span>-&gt;salary/<span class="number">12</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
+<p><strong>[强制]</strong> [PHP027] 不能使用#作为单行注释, 多行注释/ <em> *</em>/不能出现在同一行。</p>
+<hr>
+<p><strong>[强制]</strong> [PHP028] 函数必须通过param和return标记指明其参数和返回值。</p>
+<hr>
+<p><strong>[建议]</strong> 注释需要遵守phpDocumentor等注释规范，同一团队内部必须保持一致。</p>
+<hr>
+<p><strong>[建议]</strong> 必要的地方使用非文档性注释，提高代码易读性。</p>
+<h1 id="编码原则"><a href="#编码原则" class="headerlink" title="编码原则"></a>编码原则</h1><p><strong>[建议]</strong>对传入或返回的参数进行类型检查和显式转换。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$intSalary = (int) $salary;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[强制]</strong> 对于函数返回值的判断，特别是true/false, 必须用===或!==。</p>
+<hr>
+<p><strong>[强制]</strong> [PHP029] 生成对象时，必须使用new Classname()，不能用new Classname。</p>
+<hr>
+<p><strong>[强制]</strong> 所有文件路径都需要利用框架提供的宏写成绝对路径。</p>
+<hr>
+<p><strong>[建议]</strong> 对于长时间运行的CLI程序，需要及时unset无用变量，尤其是PHP5.2上。</p>
+<hr>
+<p><strong>[强制]</strong> 对于一些系统操作，使用php内置的函数例如rename、touch等即可。尽量避免使用exec调用shell命令。</p>
+<hr>
+<p><strong>[建议]</strong> 除非特殊情况，否则不允许使用require和include,而使用对应的require_once/include_once。</p>
+<hr>
+<p><strong>[建议]</strong> 配置项与PHP代码分离，不随CVS/SVN发布</p>
+<hr>
+<p><strong>[强制]</strong> 预定义变量一律使用短格式，即：$_POST、$_GET、$_SERVER、$_ENV等，不再使用长格式：$_HTTP_POST_VARS、$_HTTP_GET_VARS。</p>
+<hr>
+<p><strong>[强制]</strong> 类文件名必须符合所用框架自动加载规范，常见的是PSR-0。</p>
+<hr>
+<p><strong>[建议]</strong> 除模板外，尽量不要在php代码中出现html标签。</p>
+<hr>
+<p><strong>[建议]</strong> 能用foreach的就不要用for,能用for的就不要用while。</p>
+<hr>
+<p><strong>[强制]</strong> 每个前端访问请求必须有且仅有一条notice日志。</p>
+<hr>
+<p><strong>[建议]</strong> 数据库写操作必须有日志记录；记录条数应与操作一一对应。</p>
+<hr>
+<p><strong>[强制]</strong> 文件更新操作，必须使用临时文件+mv的方式，切忌直接写在原文件。</p>
+<hr>
+<p><strong>[建议]</strong> 字符串尽量用’ ‘而不是” “进行引用，一个是效率问题，一个是安全问题。</p>
+<hr>
+<p><strong>[强制]</strong> [PHP031] 所有的define语句，常量必须用’’包括起来。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">define(<span class="string">'PAGE_NUM'</span>, <span class="number">3</span>);</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[建议]</strong> require/include后面不使用括号。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">require_once</span> <span class="string">"a.php"</span>;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[强制]</strong> [PHP020] 函数允许使用默认参数,但是默认参数需要放到参数列表最后面。</p>
+<hr>
+<p><strong>[强制]</strong> [PHP032] 所有的全局变量应该写在函数的最开头，并且和后面的代码以空行隔开。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span><span class="params">()</span> </span>&#123;</div><div class="line">    <span class="keyword">global</span> g_count;</div><div class="line">    <span class="keyword">global</span> g_time;</div><div class="line"></div><div class="line">    a = <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[强制]</strong> [PHP033] 禁止使用and, or, 而是使用&amp;&amp;, ||</p>
+<hr>
+<p><strong>[建议]</strong> 避免使用$i, $j这样无意义的变量名, 除非是用作循环计数变量。</p>
+<hr>
+<p><strong>[建议]</strong> 避免使用php逻辑代码作为配置, 以降低改配置的危险性。</p>
+<hr>
+<p><strong>[建议]</strong> 进行==判断时，建议把常量放在前面, 避免误写成赋值操作。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">不推荐形式：</div><div class="line"><span class="keyword">if</span> ($a == <span class="number">1</span>) &#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">推荐形式：</div><div class="line"><span class="keyword">if</span> (<span class="number">1</span> == $a) &#123;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<hr>
+<p><strong>[建议]</strong> 使用变量前赋初值，提高可读性，也可避免误用别处定义的同名变量。</p>
+<hr>
+<p><strong>[建议]</strong> 错误码使用统一文件集中配置，并且使用常量，而不应裸写数字</p>
+<hr>
+<p><strong>[建议]</strong> 对于无需子类化的实体类以及不应重载的方法使用final关键字限定。</p>
+<hr>
+<p><strong>[强制]</strong> 对于不应实例化的父类使用abstract关键字限定。</p>
+<hr>
+<p><strong>[建议]</strong> 避免重载父类的static成员，这在5.2.x存在问题。</p>
+<hr>
+<p><strong>[建议]</strong> 对于仅用于某个函数或类的全局变量，使用static的局部变量或者类成员变量代替。</p>
+<hr>
+<p><strong>[建议]</strong> 在头文件中用$GLOBALS定义全局变量，避免局部包含导致的作用域问题。</p>
+<h1 id="代码性能"><a href="#代码性能" class="headerlink" title="代码性能"></a>代码性能</h1><p><strong>[强制]</strong> [PHP034] 把重复调用放在循环体外。</p>
+<p><strong>示例</strong><br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">不推荐形式：</div><div class="line"><span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; count($arr); $i++)</div><div class="line"></div><div class="line">推荐形式：</div><div class="line">$arrCount = count($arr);</div><div class="line"><span class="keyword">for</span> ($i = <span class="number">0</span>; $i &lt; $arrCount; $i++)</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mooncool.github.io/2017/05/12/php-style-guide/" data-id="cjcg9ph2s00082eyros1couns" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码规范/">代码规范</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/19/javascript-style-guide/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Javascript代码规范
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/11/css-style-guide/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">CSS编码规范</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/代码规范/" style="font-size: 15px;">代码规范</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">九月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">八月 2012</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/02/operation-guide/">运维规范</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/09/use-hard-disk-as-ram/">Linux下把硬盘当作内存</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/08/shadowsocks/">Shadowsocks安装及配置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/09/term-dictionary-2017/">门窗2017 术语-变量名对照表</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/27/rest-api-design-guide/">RESTFUL API 设计规范</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Moon<br>
+      Powered by <a href="https://mooncool.github.io/" target="_blank">月影剑博客</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

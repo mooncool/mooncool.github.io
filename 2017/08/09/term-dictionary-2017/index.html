@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>门窗2017 术语-变量名对照表 | 月影剑博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="门窗2017 术语对照表概述 数据库字段用下划线分割，代码中的变量名用小驼峰 IDE 工具统一设置为 UTF-8 编码，Unix 换行符(LF) 每个文件的末尾，必须多一个空行 返回值是时间的，命名以 _at 结尾，类型为时间戳，例如：created_at: 1503286189075 返回值是日期的，命名以 _date 结尾，类型为日期，例如：submited_date: &amp;#39;2017-0">
+<meta name="keywords" content="代码规范">
+<meta property="og:type" content="article">
+<meta property="og:title" content="门窗2017 术语-变量名对照表">
+<meta property="og:url" content="http://mooncool.github.io/2017/08/09/term-dictionary-2017/index.html">
+<meta property="og:site_name" content="月影剑博客">
+<meta property="og:description" content="门窗2017 术语对照表概述 数据库字段用下划线分割，代码中的变量名用小驼峰 IDE 工具统一设置为 UTF-8 编码，Unix 换行符(LF) 每个文件的末尾，必须多一个空行 返回值是时间的，命名以 _at 结尾，类型为时间戳，例如：created_at: 1503286189075 返回值是日期的，命名以 _date 结尾，类型为日期，例如：submited_date: &amp;#39;2017-0">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-03T12:25:40.874Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="门窗2017 术语-变量名对照表">
+<meta name="twitter:description" content="门窗2017 术语对照表概述 数据库字段用下划线分割，代码中的变量名用小驼峰 IDE 工具统一设置为 UTF-8 编码，Unix 换行符(LF) 每个文件的末尾，必须多一个空行 返回值是时间的，命名以 _at 结尾，类型为时间戳，例如：created_at: 1503286189075 返回值是日期的，命名以 _date 结尾，类型为日期，例如：submited_date: &amp;#39;2017-0">
+  
+    <link rel="alternate" href="/atom.xml" title="月影剑博客" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">月影剑博客</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">知道的越多，不知道的也越多。生命不息，学习不止！</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://mooncool.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-term-dictionary-2017" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/09/term-dictionary-2017/" class="article-date">
+  <time datetime="2017-08-09T15:47:20.000Z" itemprop="datePublished">2017-08-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      门窗2017 术语-变量名对照表
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="门窗2017-术语对照表"><a href="#门窗2017-术语对照表" class="headerlink" title="门窗2017 术语对照表"></a>门窗2017 术语对照表</h1><h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><ul>
+<li>数据库字段用下划线分割，代码中的变量名用小驼峰</li>
+<li>IDE 工具统一设置为 UTF-8 编码，Unix 换行符(LF)</li>
+<li>每个文件的末尾，必须多一个空行</li>
+<li>返回值是时间的，命名以 <code>_at</code> 结尾，类型为时间戳，例如：<br><code>created_at: 1503286189075</code></li>
+<li>返回值是日期的，命名以 <code>_date</code> 结尾，类型为日期，例如：<br><code>submited_date: &#39;2017-08-09&#39;</code></li>
+<li>数据库字段以下划线 <code>_</code> 分割</li>
+<li>对于数组形式的变量，命名为 <code>xxxList</code>，如：<code>userList</code>，<code>orderList</code></li>
+<li>对于 hashMap 形式的变量，命名为 <code>xxxMap</code>，如：<code>warehouseMap</code>，<code>catalogMap</code></li>
+</ul>
+<h2 id="单据类"><a href="#单据类" class="headerlink" title="单据类"></a>单据类</h2><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>变量名</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>方案</td>
+<td>plan / solution</td>
+<td>终端顾客的需求</td>
+</tr>
+<tr>
+<td>合同号</td>
+<td>groupCode</td>
+<td></td>
+</tr>
+<tr>
+<td>意向单 / 合同</td>
+<td>orderGroup</td>
+<td>未付款的订单，包含了一组订单</td>
+</tr>
+<tr>
+<td>订单</td>
+<td>order</td>
+<td>终端顾客付款后的订单</td>
+</tr>
+<tr>
+<td>材料销售单</td>
+<td>salesOrder</td>
+<td></td>
+</tr>
+<tr>
+<td>材料采购单</td>
+<td>purchaseOrder</td>
+<td></td>
+</tr>
+<tr>
+<td>材料生产单</td>
+<td>manufactureOrder</td>
+<td></td>
+</tr>
+<tr>
+<td>材料备料单</td>
+<td>preOutboundOrder</td>
+<td></td>
+</tr>
+<tr>
+<td>材料领料单</td>
+<td>outboundOrder</td>
+<td></td>
+</tr>
+<tr>
+<td>材料退料单</td>
+<td>preInboundOrder</td>
+<td></td>
+</tr>
+<tr>
+<td>材料收货单</td>
+<td>preInboundOrder</td>
+<td></td>
+</tr>
+<tr>
+<td>收款单</td>
+<td>?</td>
+<td></td>
+</tr>
+<tr>
+<td>包裹</td>
+<td>package</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="材料类"><a href="#材料类" class="headerlink" title="材料类"></a>材料类</h2><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>变量名</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>分类</td>
+<td>catalog</td>
+<td></td>
+</tr>
+<tr>
+<td>品牌</td>
+<td>brand</td>
+<td></td>
+</tr>
+<tr>
+<td>系列</td>
+<td>series</td>
+<td></td>
+</tr>
+<tr>
+<td>成品(门窗)</td>
+<td>product</td>
+<td></td>
+</tr>
+<tr>
+<td>物料</td>
+<td>material</td>
+<td>材料</td>
+</tr>
+<tr>
+<td>坯料 / 胚料</td>
+<td>raw?</td>
+<td></td>
+</tr>
+<tr>
+<td>型材</td>
+<td>bar</td>
+<td></td>
+</tr>
+<tr>
+<td>板材</td>
+<td>panel</td>
+<td></td>
+</tr>
+<tr>
+<td>玻璃</td>
+<td>glass</td>
+<td></td>
+</tr>
+<tr>
+<td>配件</td>
+<td>accessory</td>
+<td></td>
+</tr>
+<tr>
+<td>面料</td>
+<td>?</td>
+<td></td>
+</tr>
+<tr>
+<td>主材料</td>
+<td>primaryMaterial</td>
+<td></td>
+</tr>
+<tr>
+<td>子材料</td>
+<td>subMaterial</td>
+<td></td>
+</tr>
+<tr>
+<td>货位 / 仓位</td>
+<td>position</td>
+<td>物料摆放的位置</td>
+</tr>
+<tr>
+<td>颜色</td>
+<td>color</td>
+<td></td>
+</tr>
+<tr>
+<td>纸号</td>
+<td>paperCode</td>
+<td></td>
+</tr>
+<tr>
+<td>色号</td>
+<td>colorCode</td>
+<td></td>
+</tr>
+<tr>
+<td>粉号</td>
+<td>powder</td>
+<td></td>
+</tr>
+<tr>
+<td>编号</td>
+<td>code</td>
+<td></td>
+</tr>
+<tr>
+<td>名称</td>
+<td>name</td>
+<td></td>
+</tr>
+<tr>
+<td>支长 / 长 / 长度</td>
+<td>length</td>
+<td></td>
+</tr>
+<tr>
+<td>宽 / 宽度</td>
+<td>width</td>
+<td></td>
+</tr>
+<tr>
+<td>高 / 高度</td>
+<td>height</td>
+<td></td>
+</tr>
+<tr>
+<td>厚 / 厚度 / 壁厚</td>
+<td>thickness</td>
+<td></td>
+</tr>
+<tr>
+<td>米重</td>
+<td>meterWeight</td>
+<td></td>
+</tr>
+<tr>
+<td>密度</td>
+<td>density</td>
+<td></td>
+</tr>
+<tr>
+<td>重量</td>
+<td>weight</td>
+<td></td>
+</tr>
+<tr>
+<td>模具</td>
+<td>mould</td>
+<td></td>
+</tr>
+<tr>
+<td>包装/包装规格</td>
+<td>standard</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="用户角色、信息类"><a href="#用户角色、信息类" class="headerlink" title="用户角色、信息类"></a>用户角色、信息类</h2><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>变量名</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>经销商</td>
+<td>customer</td>
+<td>门窗厂家的下游</td>
+</tr>
+<tr>
+<td>(门窗)厂家</td>
+<td>factory</td>
+<td></td>
+</tr>
+<tr>
+<td>员工</td>
+<td>employee</td>
+<td></td>
+</tr>
+<tr>
+<td>终端顾客</td>
+<td>buyer</td>
+<td></td>
+</tr>
+<tr>
+<td>仓库</td>
+<td>warehouse</td>
+<td></td>
+</tr>
+<tr>
+<td>物流</td>
+<td>logistics</td>
+<td></td>
+</tr>
+<tr>
+<td>供应商</td>
+<td>supplier</td>
+<td></td>
+</tr>
+<tr>
+<td>部门</td>
+<td>department</td>
+<td></td>
+</tr>
+<tr>
+<td>职位 / 职务</td>
+<td>job</td>
+<td></td>
+</tr>
+<tr>
+<td>省</td>
+<td>province</td>
+<td></td>
+</tr>
+<tr>
+<td>市</td>
+<td>city</td>
+<td></td>
+</tr>
+<tr>
+<td>区 / 区域 / 县</td>
+<td>district</td>
+<td></td>
+</tr>
+<tr>
+<td>乡镇</td>
+<td>village</td>
+<td></td>
+</tr>
+<tr>
+<td>地址</td>
+<td>address</td>
+<td></td>
+</tr>
+<tr>
+<td>头像</td>
+<td>avatar</td>
+<td></td>
+</tr>
+<tr>
+<td>手机号</td>
+<td>phone</td>
+<td></td>
+</tr>
+<tr>
+<td>座机号</td>
+<td>tel</td>
+<td></td>
+</tr>
+<tr>
+<td>传真号</td>
+<td>fax</td>
+<td></td>
+</tr>
+<tr>
+<td>联系人</td>
+<td>contact</td>
+<td></td>
+</tr>
+<tr>
+<td>姓名</td>
+<td>name</td>
+<td></td>
+</tr>
+<tr>
+<td>微信</td>
+<td>wechat</td>
+<td></td>
+</tr>
+<tr>
+<td>QQ</td>
+<td>qq</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="库存类"><a href="#库存类" class="headerlink" title="库存类"></a>库存类</h2><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>变量名</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>入库</td>
+<td>inbound</td>
+<td></td>
+</tr>
+<tr>
+<td>入库数量</td>
+<td>inboundQuantity</td>
+<td></td>
+</tr>
+<tr>
+<td>出库</td>
+<td>outbound</td>
+<td></td>
+</tr>
+<tr>
+<td>出库数量</td>
+<td>outboundQuantity</td>
+<td></td>
+</tr>
+<tr>
+<td>盘存</td>
+<td>inventory</td>
+<td></td>
+</tr>
+<tr>
+<td>盘存数量</td>
+<td>inventoryQuantity</td>
+<td></td>
+</tr>
+<tr>
+<td>冻结入库数</td>
+<td>frozenInboundQuantity</td>
+<td></td>
+</tr>
+<tr>
+<td>冻结出库数</td>
+<td>frozenOutboundQuantity</td>
+<td></td>
+</tr>
+<tr>
+<td>采购车</td>
+<td>purchaseCart</td>
+<td></td>
+</tr>
+<tr>
+<td>购物车</td>
+<td>cart</td>
+<td></td>
+</tr>
+<tr>
+<td>计划收货日期</td>
+<td>estiDeliveryAt</td>
+<td></td>
+</tr>
+<tr>
+<td>收货日期</td>
+<td>deliveryAt</td>
+<td></td>
+</tr>
+<tr>
+<td>收货金额</td>
+<td>originalPrice</td>
+<td></td>
+</tr>
+<tr>
+<td>采购收货单</td>
+<td>receiptOrder</td>
+<td></td>
+</tr>
+<tr>
+<td>采购订货单</td>
+<td>purchaseOrder</td>
+<td></td>
+</tr>
+<tr>
+<td>申购</td>
+<td>request</td>
+<td></td>
+</tr>
+<tr>
+<td>申请人</td>
+<td>creator</td>
+<td></td>
+</tr>
+<tr>
+<td>申请日期</td>
+<td>createdAt</td>
+<td></td>
+</tr>
+<tr>
+<td>最高库存</td>
+<td>maxQuantity</td>
+<td></td>
+</tr>
+<tr>
+<td>实际库存/库存/当前库存</td>
+<td>quantity</td>
+<td></td>
+</tr>
+<tr>
+<td>安全库存/安全红线/最小库存</td>
+<td>minQuantity</td>
+<td></td>
+</tr>
+<tr>
+<td>待入库</td>
+<td>preInbound</td>
+<td></td>
+</tr>
+<tr>
+<td>补货/备货/备料</td>
+<td>preOutbound</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="财务类"><a href="#财务类" class="headerlink" title="财务类"></a>财务类</h2><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>变量名</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总价 / 应收款</td>
+<td>totalPrice</td>
+<td>单价*数量*折扣 的总和 + 税费 - 优惠 - 积分(返点)</td>
+</tr>
+<tr>
+<td>定金 / 保证金</td>
+<td>deposit</td>
+<td></td>
+</tr>
+<tr>
+<td>尾款</td>
+<td>leftPrice</td>
+<td>应收款 - 已收款</td>
+</tr>
+<tr>
+<td>原价 / 总金额</td>
+<td>originalPrice</td>
+<td></td>
+</tr>
+<tr>
+<td>积分</td>
+<td>score</td>
+<td></td>
+</tr>
+<tr>
+<td>返点</td>
+<td>rebate?</td>
+<td></td>
+</tr>
+<tr>
+<td>税点</td>
+<td>taxRatio</td>
+<td></td>
+</tr>
+<tr>
+<td>税费</td>
+<td>taxFee</td>
+<td></td>
+</tr>
+<tr>
+<td>账户余额 / 钱包</td>
+<td>wallet</td>
+<td></td>
+</tr>
+<tr>
+<td>银行卡</td>
+<td>bankCard</td>
+<td></td>
+</tr>
+<tr>
+<td>付款方式</td>
+<td>payment</td>
+<td></td>
+</tr>
+<tr>
+<td>财务</td>
+<td>finance</td>
+<td></td>
+</tr>
+<tr>
+<td>优惠</td>
+<td>discount</td>
+<td></td>
+</tr>
+<tr>
+<td>支付宝</td>
+<td>alipay</td>
+<td></td>
+</tr>
+<tr>
+<td>零售价/单价</td>
+<td>price</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="生产类"><a href="#生产类" class="headerlink" title="生产类"></a>生产类</h2><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>变量名</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>生产计划</td>
+<td>?</td>
+<td></td>
+</tr>
+<tr>
+<td>流程</td>
+<td>process</td>
+<td></td>
+</tr>
+<tr>
+<td>环节</td>
+<td>step</td>
+<td></td>
+</tr>
+<tr>
+<td>工作组</td>
+<td>workgroup</td>
+<td></td>
+</tr>
+<tr>
+<td>套餐</td>
+<td>predefinedStepList</td>
+<td></td>
+</tr>
+<tr>
+<td>未安排生产单</td>
+<td>unassigned</td>
+<td></td>
+</tr>
+<tr>
+<td>已安排生产单</td>
+<td>assigned</td>
+<td></td>
+</tr>
+<tr>
+<td>作色</td>
+<td>painting</td>
+<td></td>
+</tr>
+<tr>
+<td>穿条</td>
+<td>combine</td>
+<td></td>
+</tr>
+<tr>
+<td>计划时间</td>
+<td>estiStartAt</td>
+<td></td>
+</tr>
+<tr>
+<td>交货日期</td>
+<td>completeAt</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="采购申购类"><a href="#采购申购类" class="headerlink" title="采购申购类"></a>采购申购类</h2><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>变量名</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><table>
+<thead>
+<tr>
+<th>术语</th>
+<th>变量名</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>打印模版</td>
+<td>template</td>
+<td></td>
+</tr>
+<tr>
+<td>优先级</td>
+<td>priority</td>
+<td></td>
+</tr>
+<tr>
+<td>备注</td>
+<td>remark</td>
+<td></td>
+</tr>
+<tr>
+<td>助记码</td>
+<td>fastCode</td>
+<td></td>
+</tr>
+<tr>
+<td>设置</td>
+<td>setting</td>
+<td></td>
+</tr>
+<tr>
+<td>编辑</td>
+<td>edit</td>
+<td></td>
+</tr>
+<tr>
+<td>权限</td>
+<td>authority</td>
+<td></td>
+</tr>
+<tr>
+<td>分页</td>
+<td>pagination</td>
+<td></td>
+</tr>
+<tr>
+<td>当前页码</td>
+<td>page</td>
+<td></td>
+</tr>
+<tr>
+<td>每页条数</td>
+<td>perPage</td>
+<td></td>
+</tr>
+<tr>
+<td>收货地址</td>
+<td>address</td>
+<td></td>
+</tr>
+<tr>
+<td>实付金额</td>
+<td>price</td>
+<td></td>
+</tr>
+<tr>
+<td>审核人</td>
+<td>checker</td>
+<td></td>
+</tr>
+<tr>
+<td>批准人</td>
+<td>reChecker</td>
+<td></td>
+</tr>
+<tr>
+<td>退料人/领料人</td>
+<td>operator</td>
+<td></td>
+</tr>
+<tr>
+<td>录单人</td>
+<td>creator</td>
+<td></td>
+</tr>
+<tr>
+<td>已收金额</td>
+<td>receivedPrice</td>
+<td></td>
+</tr>
+<tr>
+<td>收货人</td>
+<td>receiver</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://mooncool.github.io/2017/08/09/term-dictionary-2017/" data-id="cjcg9ph37000s2eyrnw9mxuxx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/代码规范/">代码规范</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/09/08/shadowsocks/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Shadowsocks安装及配置
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/07/27/rest-api-design-guide/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">RESTFUL API 设计规范</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码规范/">代码规范</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术/">技术</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/代码规范/" style="font-size: 15px;">代码规范</a> <a href="/tags/技术/" style="font-size: 20px;">技术</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/11/">十一月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/10/">十月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">九月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">七月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">五月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/09/">九月 2012</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2012/08/">八月 2012</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/11/02/operation-guide/">运维规范</a>
+          </li>
+        
+          <li>
+            <a href="/2017/10/09/use-hard-disk-as-ram/">Linux下把硬盘当作内存</a>
+          </li>
+        
+          <li>
+            <a href="/2017/09/08/shadowsocks/">Shadowsocks安装及配置</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/09/term-dictionary-2017/">门窗2017 术语-变量名对照表</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/27/rest-api-design-guide/">RESTFUL API 设计规范</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Moon<br>
+      Powered by <a href="https://mooncool.github.io/" target="_blank">月影剑博客</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
