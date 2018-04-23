@@ -239,7 +239,7 @@
 
     
         <meta property="article:published_time" content="Mon Oct 09 2017 13:35:17 GMT+0800">
-        <meta property="article:modified_time" content="Sun Dec 03 2017 20:25:40 GMT+0800">
+        <meta property="article:modified_time" content="Sun Apr 22 2018 19:43:14 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://mooncool.github.io/2017/10/09/use-hard-disk-as-ram/index.html",
     "headline": "Linux下把硬盘当作内存",
     "datePublished": "Mon Oct 09 2017 13:35:17 GMT+0800",
-    "dateModified": "Sun Dec 03 2017 20:25:40 GMT+0800",
+    "dateModified": "Sun Apr 22 2018 19:43:14 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Moon",
@@ -482,12 +482,16 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fallocate -l 4G ~/vram</span><br></pre></td></tr></table></figure>
 <p>要多少，直接后面加，可以M、G各种单位。</p>
 <ol start="2">
-<li>第二步当然是把这块内存初始化一下了</li>
+<li>第二步修改文件权限为只读</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod 600 vram</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>第三步当然是把这块内存初始化一下了</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkswap ~/vram -f</span><br></pre></td></tr></table></figure>
 <p>路径请自行改成上面自己定义的路径。</p>
-<ol start="3">
-<li>第三步，挂接上去，大功告成！</li>
+<ol start="4">
+<li>第四步，挂载上去，大功告成！</li>
 </ol>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo swapon -p 1000 ~/vram</span><br></pre></td></tr></table></figure>
 <p>注意这一步是用root权限哦！不然会报错<code>swapon failed: Operation not permitted</code>。<br>大功告成，让我们检查一下：</p>
@@ -648,7 +652,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/09/">九月 2012<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/08/">八月 2012<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/09/">九月 2012<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/08/">八月 2012<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
