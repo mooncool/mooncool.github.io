@@ -43,7 +43,7 @@
     
     <title>
         
-            Ubuntu命令行下修改时区(Timezone) | 
+            Logtail RDS配置 | 
         
         月影剑博客
     </title>
@@ -54,7 +54,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="null,技术,Linux">
+    <meta name="keywords" content="null,技术">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -215,7 +215,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="月影剑博客">
-    <meta name="msapplication-starturl" content="http://mooncool.github.io/2012/08/20/ubuntu-change-timezone/">
+    <meta name="msapplication-starturl" content="http://mooncool.github.io/2018/05/11/logtail-rds-configuration/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="月影剑博客">
@@ -230,16 +230,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://mooncool.github.io/2012/08/20/ubuntu-change-timezone/">
+    <meta property="og:url" content="http://mooncool.github.io/2018/05/11/logtail-rds-configuration/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Ubuntu命令行下修改时区(Timezone) | 月影剑博客">
+    <meta property="og:title" content="Logtail RDS配置 | 月影剑博客">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="技术"> <meta property="og:article:tag" content="Linux"> 
+    <meta property="og:article:tag" content="技术"> 
 
     
-        <meta property="article:published_time" content="Mon Aug 20 2012 14:12:45 GMT+0800">
-        <meta property="article:modified_time" content="Sun Dec 03 2017 20:25:40 GMT+0800">
+        <meta property="article:published_time" content="Fri May 11 2018 10:46:12 GMT+0800">
+        <meta property="article:modified_time" content="Fri May 18 2018 10:06:52 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +247,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://mooncool.github.io/2012/08/20/ubuntu-change-timezone/index.html" />
+        <link rel="canonical" href="http://mooncool.github.io/2018/05/11/logtail-rds-configuration/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +259,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://mooncool.github.io/2012/08/20/ubuntu-change-timezone/index.html",
-    "headline": "Ubuntu命令行下修改时区(Timezone)",
-    "datePublished": "Mon Aug 20 2012 14:12:45 GMT+0800",
-    "dateModified": "Sun Dec 03 2017 20:25:40 GMT+0800",
+    "mainEntityOfPage": "http://mooncool.github.io/2018/05/11/logtail-rds-configuration/index.html",
+    "headline": "Logtail RDS配置",
+    "datePublished": "Fri May 11 2018 10:46:12 GMT+0800",
+    "dateModified": "Fri May 18 2018 10:06:52 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Moon",
@@ -280,7 +280,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",技术,Linuxnull",
+    "keywords": ",技术null",
     "description": "",
 }
 </script>
@@ -349,6 +349,15 @@
     <!-- Left aligned menu below button -->
     
     
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装过程中的问题"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装过程中的问题</span></a></li></ol>
+    </ul>
+    
 
 
 
@@ -378,7 +387,7 @@
         
     
             <p class="article-headline-p">
-                Ubuntu命令行下修改时区(Timezone)
+                Logtail RDS配置
             </p>
         </div>
 
@@ -397,7 +406,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>Moon</strong>
-        <span>8月 20, 2012</span>
+        <span>5月 11, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -421,7 +430,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/Linux/">Linux</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/技术/">技术</a>
+        <a class="post_tag-link" href="/tags/技术/">技术</a>
     </ul>
     
 
@@ -438,7 +447,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Ubuntu命令行下修改时区(Timezone)&url=http://mooncool.github.io/2012/08/20/ubuntu-change-timezone/index.html&pic=http://mooncool.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Logtail RDS配置&url=http://mooncool.github.io/2018/05/11/logtail-rds-configuration/index.html&pic=http://mooncool.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -472,9 +481,11 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>运行命令：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@MoonServer:~# dpkg-reconfigure tzdata</span><br></pre></td></tr></table></figure>
-<p>按照提示操作即可。</p>
+        <p>Logtail采集RDS的binlog，原理上就是伪装成一个slave节点，向MySQL master发送dump协议；MySQL的master收到dump请求后，会将自身的Binary log实时推送给Logtail，Logtail对Binlog进行事件解析、过滤、数据解析等，并将解析好的数据上传到日志服务。所以需要保证配置的用户具有需要采集的数据库读权限以及MySQL REPLICATION权限。</p>
+<p>RDS的默认用户已经有了该权限。</p>
+<img src="/2018/05/11/logtail-rds-configuration/show_grants.png" title="RDS默认用户的授权">
+<p>具体的配置请参考：<a href="https://help.aliyun.com/document_detail/64953.html" target="_blank" rel="noopener">参考文献</a></p>
+<h2 id="安装过程中的问题"><a href="#安装过程中的问题" class="headerlink" title="安装过程中的问题"></a>安装过程中的问题</h2><p>按照完调试过程中，发现无法采集<code>SELECT</code>语句，后经排查发现，binlog本身不记录<code>SELECT</code>语句，所以Logtail也就无法采集了。</p>
 
         
     
@@ -493,8 +504,8 @@
     <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_config = function () {
-        this.page.url = 'http://mooncool.github.io/2012/08/20/ubuntu-change-timezone/';  // Replace PAGE_URL with your page's canonical URL variable
-        this.page.identifier = 'http://mooncool.github.io/2012/08/20/ubuntu-change-timezone/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        this.page.url = 'http://mooncool.github.io/2018/05/11/logtail-rds-configuration/';  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = 'http://mooncool.github.io/2018/05/11/logtail-rds-configuration/'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 </script>
 <script type="text/ls-javascript" id="disqus-thread-script">
@@ -524,21 +535,13 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2012/08/29/think-about-discuz/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
     
-        <a href="/2012/08/20/wordpress-install-plugin-error/" id="post_nav-older" class="next-content">
+        <a href="/2018/05/11/logtail-ecs-configuration/" id="post_nav-older" class="next-content">
             旧篇
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
