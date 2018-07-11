@@ -239,7 +239,7 @@
 
     
         <meta property="article:published_time" content="Sat Apr 21 2018 17:46:56 GMT+0800">
-        <meta property="article:modified_time" content="Sat Apr 21 2018 17:53:47 GMT+0800">
+        <meta property="article:modified_time" content="Mon Jun 04 2018 15:38:04 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -262,7 +262,7 @@
     "mainEntityOfPage": "http://mooncool.github.io/2018/04/21/centos-docker-installation/index.html",
     "headline": "Centos安装Docker CE",
     "datePublished": "Sat Apr 21 2018 17:46:56 GMT+0800",
-    "dateModified": "Sat Apr 21 2018 17:53:47 GMT+0800",
+    "dateModified": "Mon Jun 04 2018 15:38:04 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "Moon",
@@ -355,7 +355,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">1.</span> <span class="post-toc-text">准备工作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卸载老版本"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">卸载老版本</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Docker-CE"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装Docker CE</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用repository安装"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">使用repository安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Docker-CE-1"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装Docker CE</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动Docker"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">启动Docker</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#卸载Docker-CE"><span class="post-toc-number">3.</span> <span class="post-toc-text">卸载Docker CE</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">1.</span> <span class="post-toc-text">准备工作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卸载老版本"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">卸载老版本</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装Docker-CE"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装Docker CE</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#使用repository安装"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">使用repository安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Docker-CE-1"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">安装Docker CE</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#启动Docker"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">启动Docker</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#卸载Docker-CE"><span class="post-toc-number">3.</span> <span class="post-toc-text">卸载Docker CE</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#后续步骤"><span class="post-toc-number">4.</span> <span class="post-toc-text">后续步骤</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置Docker运行在非root用户下"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">配置Docker运行在非root用户下</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装docker-compose工具"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">安装docker-compose工具</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -488,6 +488,30 @@
 <h3 id="启动Docker"><a href="#启动Docker" class="headerlink" title="启动Docker"></a>启动Docker</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl start docker</span><br></pre></td></tr></table></figure>
 <h2 id="卸载Docker-CE"><a href="#卸载Docker-CE" class="headerlink" title="卸载Docker CE"></a>卸载Docker CE</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum remove docker-ce</span><br></pre></td></tr></table></figure>
 <p>镜像、容器或者其他自定义配置不会自动删除，所以需要手动删除<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /var/lib/docker</span><br></pre></td></tr></table></figure></p>
+<h2 id="后续步骤"><a href="#后续步骤" class="headerlink" title="后续步骤"></a>后续步骤</h2><h3 id="配置Docker运行在非root用户下"><a href="#配置Docker运行在非root用户下" class="headerlink" title="配置Docker运行在非root用户下"></a>配置Docker运行在非root用户下</h3><ol>
+<li>创建docker用户组(默认情况下，安装完Docker自然就建立好了)</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo groupadd docker</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>将当前用户添加到docker组</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo usermod -aG docker $USER</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>注销用户重新登录 or 重启机器使配置生效</li>
+</ol>
+<h3 id="安装docker-compose工具"><a href="#安装docker-compose工具" class="headerlink" title="安装docker-compose工具"></a>安装<code>docker-compose</code>工具</h3><ol>
+<li>下载最新版 Docker Compose</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<p>注意替换上面的版本号为最新版本</p>
+<ol start="2">
+<li>修改执行权限</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod +x /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>测试下安装是否正确</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker-compose --version</span><br><span class="line">docker-compose version 1.21.2, build 1719ceb</span><br></pre></td></tr></table></figure>
 
         
     
@@ -537,7 +561,7 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2018/04/30/mini2015-report-debug/" id="post_nav-newer" class="prev-content">
+        <a href="/2018/05/11/logtail-ecs-configuration/" id="post_nav-newer" class="prev-content">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
                 <i class="material-icons">arrow_back</i>
             </button>
@@ -643,7 +667,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/09/">九月 2012<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/08/">八月 2012<span class="sidebar_archives-count">3</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">四月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/11/">十一月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/10/">十月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/09/">九月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/07/">七月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">5</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/09/">九月 2012<span class="sidebar_archives-count">4</span></a></li><li><a class="sidebar_archives-link" href="/archives/2012/08/">八月 2012<span class="sidebar_archives-count">3</span></a>
             </ul>
         </li>
         
